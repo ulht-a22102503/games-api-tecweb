@@ -1,4 +1,4 @@
-FROM golang:1.22 as builder
+FROM golang:1.23 as builder
 ADD ./app /app
 WORKDIR /app
 RUN go build -o /go/bin/api /app/*.go

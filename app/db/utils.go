@@ -10,7 +10,7 @@ import (
 )
 
 var (
-	DB_CONNECTION *gorm.DB
+	_DB_CONNECTION *gorm.DB
 )
 
 func Connect() {
@@ -27,5 +27,13 @@ func Connect() {
 		log.Println(err)
 		return
 	}
-	DB_CONNECTION = db
+	_DB_CONNECTION = db
+}
+
+func GetDbConnection() *gorm.DB {
+	if _DB_CONNECTION == nil {
+		Connect()
+	}
+
+	return _DB_CONNECTION
 }

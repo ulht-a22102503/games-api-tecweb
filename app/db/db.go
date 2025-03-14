@@ -1,7 +1,12 @@
 package db
 
 func Ping() bool {
-	db, err := DB_CONNECTION.DB()
+	dbConnection := GetDbConnection()
+	if dbConnection == nil {
+		return false
+	}
+
+	db, err := dbConnection.DB()
 	if err != nil {
 		return false
 	}

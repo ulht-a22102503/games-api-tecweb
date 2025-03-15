@@ -11,7 +11,11 @@ import (
 
 func main() {
 	log.Println("Starting API...")
+
 	db.Connect()
+	db.Migrate()
+	db.Populate()
+
 	router := gin.Default()
 
 	router.GET("/", func(c *gin.Context) {
@@ -28,6 +32,8 @@ func main() {
 		})
 
 	})
+
+	router.GET("/games", rest.GetGames)
 
 	router.Run(":50007")
 }

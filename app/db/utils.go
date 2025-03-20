@@ -104,6 +104,8 @@ func Populate() {
 		{0, "No Man’s Sky", "A space exploration game with infinite planets.", "Exploration"},
 		{0, "Hades", "A rogue-like dungeon crawler.", "Rogue-like"},
 		{0, "Disco Elysium", "A deep, story-driven RPG.", "RPG"},
+		{0, "Overwatch", "An online, ability-based shooter", "Shooter"},
+		{0, "Honkai: Star Rail", "An intergalactic train with travelers going around the universe", "RPG"},
 	}
 
 	for _, g := range games {
